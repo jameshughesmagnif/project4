@@ -1,0 +1,29 @@
+<%= form_for(@plan) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :months %><br>
+    <%= f.number_field :months %>
+  </div>
+  <div class="field">
+    <%= f.label :monthly_price %><br>
+    <%= f.number_field :monthly_price %>
+  </div>
+  <div class="field">
+    <%= f.label :num_class %><br>
+    <%= f.text_field :num_class %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

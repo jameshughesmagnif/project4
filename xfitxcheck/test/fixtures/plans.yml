@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  months: 1
+  monthly_price: 1
+  num_class: MyString
+
+two:
+  months: 1
+  monthly_price: 1
+  num_class: MyString
