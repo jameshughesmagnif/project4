@@ -1,12 +1,12 @@
 Template.Menu.onCreated(function() {
   var self = this;
   self.autorun(function() {
-    self.subscribe('recipes');
+    self.subscribe('gyms');
   });
 });
 
 Template.Menu.helpers({
-    recipes: ()=> {
-      return Recipes.find({inMenu: true});
+    gyms: ()=> {
+      return Gyms.find({inMenu: true});
     }
 });

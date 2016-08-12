@@ -1,6 +1,6 @@
-Recipes = new Mongo.Collection('recipes');
+Gyms = new Mongo.Collection('gyms');
 
-Recipes.allow({
+Gyms.allow({
     insert: function(userId, doc) {
       return !!userId;
     },
@@ -18,7 +18,7 @@ Ingredient = new SimpleSchema({
     }
 });
 
-RecipeSchema = new SimpleSchema({
+GymSchema = new SimpleSchema({
     name: {
         type: String,
         label: "Name"
@@ -64,15 +64,15 @@ RecipeSchema = new SimpleSchema({
 
 Meteor.methods({
   toggleMenuItem: function(id, currentState) {
-      Recipes.update(id, {
+      Gyms.update(id, {
         $set: {
           inMenu: !currentState
         }
       });
   },
-  deleteRecipe: function (id) {
-    Recipes.remove(id);
+  deleteGym: function (id) {
+    Gyms.remove(id);
   }
 });
 
-Recipes.attachSchema( RecipeSchema );
+Gyms.attachSchema( GymSchema );

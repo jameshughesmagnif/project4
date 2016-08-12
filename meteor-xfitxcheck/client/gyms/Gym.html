@@ -1,8 +1,8 @@
-<template name="Recipe">
-  <article class="recipe {{#if inMenu}}in-menu{{/if}}">
+<template name="Gym">
+  <article class="gym {{#if inMenu}}in-menu{{/if}}">
     <h3>{{name}}</h3>
     {{#if editMode }}
-    {{> quickForm collection="Recipes" id=updateRecipeId type="update" doc=this autosave=true}}
+    {{> quickForm collection="Gyms" id=updateGymId type="update" doc=this autosave=true}}
     {{else}}
 
     <p>{{desc}}</p>
@@ -11,7 +11,7 @@
       <span class="ingredient">{{name}} - {{amount}}</span>
       {{/each}}
     </p>
-    <a href="/recipe/{{_id}}">View Details</a>
+    <a href="/gym/{{_id}}">View Details</a>
     {{#if inMenu}}
     <button class="btn-deny toggle-menu">Remove From Menu</button>
     {{else}}

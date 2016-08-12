@@ -1,6 +1,6 @@
 if (Meteor.isClient){
 Accounts.onLogin(function() {
-  FlowRouter.go('recipe-book');
+  FlowRouter.go('gym-book');
 });
 
 Accounts.onLogout(function() {
@@ -18,26 +18,26 @@ FlowRouter.route('/', {
     name: 'home',
     action() {
       if(Meteor.userId()) {
-          FlowRouter.go('recipe-book');
+          FlowRouter.go('gym-book');
       }
       GAnalytics.pageview();
       BlazeLayout.render('HomeLayout');
     }
 });
 
-FlowRouter.route('/recipe-book', {
-    name: 'recipe-book',
+FlowRouter.route('/gym-book', {
+    name: 'gym-book',
     action() {
       GAnalytics.pageview();
-      BlazeLayout.render('MainLayout', {main: 'Recipes'});
+      BlazeLayout.render('MainLayout', {main: 'Gyms'});
     }
 });
 
-FlowRouter.route('/recipe/:id', {
-    name: 'recipe',
+FlowRouter.route('/gym/:id', {
+    name: 'gym',
     action() {
       GAnalytics.pageview();
-      BlazeLayout.render('MainLayout', {main: 'RecipeSingle'});
+      BlazeLayout.render('MainLayout', {main: 'GymSingle'});
     }
 });
 
