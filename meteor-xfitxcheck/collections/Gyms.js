@@ -27,7 +27,7 @@ GymSchema = new SimpleSchema({
       type: String,
       label: "Description"
     },
-    ingredients: {
+    information: {
         type: [Ingredient]
     },
 
